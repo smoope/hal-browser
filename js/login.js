@@ -1,5 +1,16 @@
 $(document).ready(function() {
+    var host = window.location.hostname;
     var grant = "client_credentials";
+    var wellknown = window.location.protocol + "//" + window.location.hostname + "/.well-known/smoope";
+
+    $.ajax({
+	url: wellknown,
+	async: false,
+	success: function(data) {
+	    console.log(data);
+	    $("#server").val(data.tokenEndpoint);
+	}
+    });
     
     $('#passwordGrant').click(function(e) {
 	$("#clientid").val("smoope-web");
@@ -26,7 +37,7 @@ $(document).ready(function() {
 
 	event.preventDefault();
 	$.ajax({
-	    url : '/auth/token',
+	    url : $("#server").val(),
 	    type : 'POST',
 	    async : false,
 	    data : data,

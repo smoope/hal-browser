@@ -45,10 +45,11 @@
       <h3 class="form-signin-heading">HAL Browser - OAuth2</h3>
       <label><input id="clientGrant" type="radio" checked="true" name="grant" value="client_credentials"> client_credentials</label>
       <label><input id="passwordGrant" type="radio" name="grant" value="password"> password</label>
+      <input type="text" class="input-block-level" placeholder="OAuth server" id="server">
       <input type="text" class="input-block-level" placeholder="Client ID" id="clientid">
       <input type="text" class="input-block-level" placeholder="Client Secret" id="clientsecret">
-      <input type="text" class="input-block-level" placeholder="Username" id="username">
-      <input type="password" class="input-block-level" placeholder="Password" id="password">
+      <input type="text" class="input-block-level" placeholder="Username" id="username" disabled>
+      <input type="password" class="input-block-level" placeholder="Password" id="password" disabled>
       <button type="submit" class="btn btn-large btn-primary" id="login">Sign in</button>
     </form>
   </div>
