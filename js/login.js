@@ -7,8 +7,11 @@ $(document).ready(function() {
 	url: wellknown,
 	async: false,
 	success: function(data) {
-	    console.log(data);
 	    $("#server").val(data.tokenEndpoint);
+	},
+	error: function() {
+	    // fallback dev oauth
+	    $("#server").val("http://10.35.10.10:8083/token");
 	}
     });
     
