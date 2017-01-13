@@ -1,0 +1,6 @@
+{
+  "name": "hal-browser",
+  "short_name": "hal-browser",
+  "start_url": "/",
+  "display": "standalone"
+}
